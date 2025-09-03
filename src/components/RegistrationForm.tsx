@@ -1,0 +1,40 @@
+import React, { useState } from 'react';
+import { auth } from "../firebase";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserDocument } from '../services/useService';
+
+const RegistrationForm: React.FC = () => {
+
+    const [email, setEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
+            await createUserDocument(user, { firstName, lastName });
+
+            alert("User registered successfully!");
+        } catch (error) {
+            console.error("Error registering:", error.message);
+        }
+    };
+
+    return (
+
+        <form onSubmit={handleRegister}>
+            <input value={firstName} onChange={e => setFirstName(e.target.value)} placeholder='First Name' />
+            <input value={lastName} onChange={e => setLastName(e.target.value)} placeholder='Last Name' />
+            <input value={email} onChange={e => setEmail(e.target.value)} type='email' placeholder='Email' />
+            <input value={password} onChange={e => setPassword(e.target.value)} type='password' placeholder='New Password' />
+            <button type='submit' >Register</button>
+        </form>
+
+    )
+}
+
+export default RegistrationForm;
