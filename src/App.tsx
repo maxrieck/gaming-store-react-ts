@@ -11,7 +11,7 @@ const App:React.FC = () => {
     <AuthProvider>
       <RegistrationForm />
       <AddProductForm />
-      <UserList />
+      {/* <UserList /> */}
       <ProductList />
     </AuthProvider>
   )
