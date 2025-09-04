@@ -12,15 +12,18 @@ const RegistrationForm: React.FC = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
+        if (!firstName || !lastName || !email || !password) {
+            alert("Please fill in all fields.");
+            return;
+        }
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
-
             await createUserDocument(user, { firstName, lastName });
-
             alert("User registered successfully!");
         } catch (error) {
-            console.error("Error registering:", error.message);
+            console.error("Error registering:", error);
+            alert("Error registering: " + (error?.message || error));
         }
     };
 

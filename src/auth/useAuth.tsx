@@ -17,15 +17,8 @@ export const AuthProvider:React.FC<{children: React.ReactNode}> = ({ children })
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
-      if (user) {
-        try {
-          await createUserDocument(user);
-        } catch (error) {
-          console.log(error)
-        }
-      }
       setLoading(false);
     });
 

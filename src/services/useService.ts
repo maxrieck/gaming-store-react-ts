@@ -17,5 +17,8 @@ export async function createUserDocument(user, extraData = {}) {
             createdAt,
             ...extraData
         })
+
     }
+
+
 }
