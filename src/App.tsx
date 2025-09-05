@@ -1,18 +1,23 @@
 import { AuthProvider } from './auth/useAuth'
-import AddProductForm from './components/AddProductForm'
-import ProductList from './components/ProductList'
-import RegistrationForm from './components/RegistrationForm'
-import UserList from './components/UserList'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import Hompage from './pages/Hompage'
+import ProductPage from './pages/ProductPage'
+import NavBar from './components/NavBar'
+import AdminUser from './pages/AdminUser'
 
 const App:React.FC = () => {
  
 
   return (
     <AuthProvider>
-      <RegistrationForm />
-      <AddProductForm />
-      {/* <UserList /> */}
-      <ProductList />
+      <BrowserRouter>
+      <NavBar />
+        <Routes>
+          <Route path='/' element={<Hompage />} />
+          <Route path='/products' element={<ProductPage />} />
+          <Route path='/admin' element={<AdminUser />} />
+        </Routes>        
+      </BrowserRouter>
     </AuthProvider>
   )
 }

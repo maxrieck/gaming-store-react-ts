@@ -48,7 +48,7 @@ const ProductList:React.FC = () => {
         <h2>Product List</h2>
         {products.map((products) => (
             <div key={products.id} 
-                style={{border: 'solid 1px', margin: "1rem"}}>
+                className='bg-blue-500 border m-4'>
                 <div>
                     <p>Name: {products.name}</p>
                     <p>Price: {products.price}</p>
