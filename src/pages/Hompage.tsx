@@ -1,4 +1,5 @@
 import React from 'react'
+import PageLayout from './PageLayout';
 
 
    
@@ -7,10 +8,10 @@ const Hompage:React.FC = () => {
 
 return (
 
-    <div>
+    <PageLayout>
         <h2>Homepage</h2>
 
-    </div>
+    </PageLayout>
 
     );
 };

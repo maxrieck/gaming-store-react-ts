@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase';
 import { collection, getDocs, } from 'firebase/firestore';
+import PageLayout from './PageLayout';
 
 
 interface Product {
@@ -32,7 +33,7 @@ const ProductPage:React.FC = () => {
 
     return (
 
-    <div>
+    <PageLayout>
         <h2>Products</h2>
         {products.map((product) => (
             <div 
@@ -45,7 +46,7 @@ const ProductPage:React.FC = () => {
         ))}
 
 
-    </div>
+    </PageLayout>
 
     )
 };

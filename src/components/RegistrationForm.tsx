@@ -3,6 +3,7 @@ import { auth } from "../firebase";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { createUserDocument } from '../services/useService';
 
+
 const RegistrationForm: React.FC = () => {
 
     const [email, setEmail] = useState<string>("");
