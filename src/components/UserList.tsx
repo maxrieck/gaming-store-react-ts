@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../firebase';
+import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore'
+import type { User } from '../types'
 
-interface User {
-    id?: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    role: string;
-}
 
 const UserList: React.FC = () => {
     const [users, setUsers] = useState<User[]>([]);

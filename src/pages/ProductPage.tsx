@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../firebase';
+import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs, } from 'firebase/firestore';
 import PageLayout from './PageLayout';
 import type { Product } from '../types';
+import AddCartButton from '../components/AddCartButton';
 
 
 const ProductPage:React.FC = () => {
@@ -38,6 +39,7 @@ const ProductPage:React.FC = () => {
                 alt="" />
                 <p>Price: ${product.price}</p>
                 <p>{product.description}</p>
+                <AddCartButton product={product} />
             </div>
         ))}
         </div>

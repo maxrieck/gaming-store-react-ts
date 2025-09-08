@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { db } from '../firebase';
+import { db } from '../firebase/firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
 import type { Product } from '../types'
 
@@ -10,7 +10,9 @@ const AddProductForm = () => {
         name:'',
         description:'',
         price:0,
-        image:''
+        image:'',
+        category:'',
+
     })
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -26,7 +28,7 @@ const AddProductForm = () => {
         try {
             await addDoc(collection(db, 'products'), productData);
             alert('Product was added!');
-            setProductData({name:'', description:'', price:0})
+            setProductData({name:'', description:'', price:0, category:'',})
         } catch (error) {
             console.error('Error adding document', error)
         }

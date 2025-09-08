@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from '../auth/useAuth'
+import { useAuth } from '../firebase/useAuth'
 import PageLayout from "../pages/PageLayout";
 
 

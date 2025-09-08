@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuth } from '../auth/useAuth'
+import { useAuth } from '../firebase/useAuth'
 
 
 const Logout:React.FC = () => {

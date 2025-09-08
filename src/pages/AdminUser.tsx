@@ -4,7 +4,7 @@ import RegistrationForm from '../components/RegistrationForm'
 import UserList from '../components/UserList'
 import AddProductForm from '../components/AddProductForm'
 import PageLayout from './PageLayout'
-import { useAuth } from '../auth/useAuth'
+import { useAuth } from '../firebase/useAuth'
 
 
 const AdminUser:React.FC = () => {

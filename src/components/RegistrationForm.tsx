@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { auth } from "../firebase";
+import { auth } from "../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { createUserDocument } from '../services/useService';
+import { createUserDocument } from '../firebase/useService';
 
 
 const RegistrationForm: React.FC = () => {
