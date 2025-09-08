@@ -16,6 +16,7 @@ const ProductList:React.FC = () => {
     const [newName, setNewName] = useState<string>('');
     const [newDescription, setNewDescription] = useState<string>('');
     const [newPrice, setNewPrice] = useState<number>(0)
+    const [newPicture, setNewPicture] = useState<string>("")
 
 
     const updateProduct = async (productId:string, updatedData: string | number) => {
@@ -73,6 +74,13 @@ const ProductList:React.FC = () => {
                     placeholder="Enter new price:"/>
                 <button onClick={() => updateProduct(products.id, { price: newPrice })}>
                     Update Price
+                </button>
+                <input
+                    onChange={(e) => setNewPicture(e.target.value)}
+                    type="string"
+                    placeholder="Enter image URL:"/>
+                <button onClick={() => updateProduct(products.id, { image: newPicture })}>
+                    Update Picture
                 </button>
                 <button onClick={() => deleteProduct(products.id)}>Delete Product</button>
             </div>

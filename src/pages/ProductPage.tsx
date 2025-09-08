@@ -34,18 +34,20 @@ const ProductPage:React.FC = () => {
     return (
 
     <PageLayout>
-        <h2>Products</h2>
+        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2' >
         {products.map((product) => (
             <div 
-            className='border m-1'
+            className='border p-3'
             key={product.id}>
-                <h4>{product.name}</h4>
+                <h4>{product.name}</h4>                
+                <img src={product.image} 
+                className='w-50'
+                alt="" />
                 <p>Price: ${product.price}</p>
                 <p>{product.description}</p>
             </div>
         ))}
-
-
+        </div>
     </PageLayout>
 
     )
