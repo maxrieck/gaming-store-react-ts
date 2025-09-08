@@ -2,15 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../firebase';
 import { collection, getDocs, } from 'firebase/firestore';
 import PageLayout from './PageLayout';
+import type { Product } from '../types';
 
-
-interface Product {
-    id?: string;
-    name: string;
-    description: string;
-    price: number;
-    image?: string;
-}
 
 const ProductPage:React.FC = () => {
 

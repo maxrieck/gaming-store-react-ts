@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import { db } from '../firebase';
 import { collection, addDoc } from 'firebase/firestore';
-
-
-interface Product {
-    id?: string;
-    name: string;
-    description: string;
-    price: number;
-    image?: string;
-}
+import type { Product } from '../types'
 
 
 const AddProductForm = () => {
