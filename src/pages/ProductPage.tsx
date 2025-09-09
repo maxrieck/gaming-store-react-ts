@@ -3,7 +3,9 @@ import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs, } from 'firebase/firestore';
 import PageLayout from './PageLayout';
 import type { Product } from '../types';
-import AddCartButton from '../components/AddCartButton';
+import './ProductPage.module.css'
+import ProductCards from '../components/ProductCards';
+
 
 
 const ProductPage:React.FC = () => {
@@ -28,20 +30,8 @@ const ProductPage:React.FC = () => {
     return (
 
     <PageLayout>
-        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2' >
-        {products.map((product) => (
-            <div 
-            className='border p-3'
-            key={product.id}>
-                <h4>{product.name}</h4>                
-                <img src={product.image} 
-                className='w-50'
-                alt="" />
-                <p>Price: ${product.price}</p>
-                <p>{product.description}</p>
-                <AddCartButton product={product} />
-            </div>
-        ))}
+        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3' >
+            <ProductCards products={products} />
         </div>
     </PageLayout>
 

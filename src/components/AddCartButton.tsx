@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import type { AppDispatch } from '../store/store'
 import { addCartItem, } from '../store/cartSlice';
 import type { Product } from '../types'
-// import AddCartModal from './AddCartModal';
+import AddCartModal from './AddCartModal';
 
 
 interface AddCartButtonProps {
@@ -15,17 +15,17 @@ const AddCartButton:React.FC<AddCartButtonProps>= ({ product }) => {
 
     const dispatch = useDispatch<AppDispatch>();
 
-    // const [showModal, setShowModal] = useState<boolean>(false)
+    const [showModal, setShowModal] = useState<boolean>(false)
     
-    // const handleModal = () => {
-    //         setShowModal(true)
-    // }
+    const handleModal = () => {
+            setShowModal(true)
+    }
 
 
   return (
 
     <>
-    {/* {showModal && <AddCartModal onClose={()=>setShowModal(false)}/>} */}
+    {showModal && <AddCartModal onClose={()=>setShowModal(false)}/>}
     <button 
         onClick={() => {
             if (product.id) {
@@ -33,9 +33,9 @@ const AddCartButton:React.FC<AddCartButtonProps>= ({ product }) => {
             } else {
                 console.error('Product id is missing');
             }
-            // handleModal();
+            handleModal();
         }}
-        className='button-theme'
+        className='my-3 mx-5'
     
     >Add to Cart</button>
     

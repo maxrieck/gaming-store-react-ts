@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux'
 import type { AppDispatch, RootState } from '../store/store';
 import { useDispatch } from 'react-redux';
 import PageLayout from './PageLayout';
-import type { Product } from '../types';
-
+import CartItems from '../components/CartItems';
+import { emptyCart } from '../store/cartSlice';
 
 
 
@@ -14,16 +14,21 @@ const ShoppingCart:React.FC = () => {
 
     const dispatch = useDispatch<AppDispatch>();
 
+    const safeCart = currentCart ?? [];
+
 
   return (
 
     <PageLayout>
 
-        {currentCart.map((product: Product, index: number) => (
-            <div key={index}>
-                <h3>{product.name}</h3>
-            </div>
-        ))}
+        
+        <CartItems cartItems = {safeCart} />
+
+        <button
+            onClick={() => {
+                dispatch(emptyCart())
+            }}
+        >Checkout</button>
 
 
     </PageLayout>

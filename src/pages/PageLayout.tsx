@@ -17,11 +17,11 @@ const PageLayout:React.FC<PageLayoutProps> = ({ children }) => {
         <NavBar />
       </header>
 
-      <aside className="hidden md:block bg-gray-100 p-4">
+      <aside className="hidden md:block bg-gray-900 p-4">
         Sidebar
       </aside>
 
-      <main className="bg-white p-4">
+      <main className="bg-gray-900 p-4">
         {children}
       </main>
 
