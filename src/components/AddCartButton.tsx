@@ -4,6 +4,7 @@ import type { AppDispatch } from '../store/store'
 import { addCartItem, } from '../store/cartSlice';
 import type { Product } from '../types'
 import AddCartModal from './AddCartModal';
+import styles from '../pages/ProductPage.module.css'
 
 
 interface AddCartButtonProps {
@@ -35,7 +36,7 @@ const AddCartButton:React.FC<AddCartButtonProps>= ({ product }) => {
             }
             handleModal();
         }}
-        className='my-3 mx-5'
+        className={`my-3 mx-5 ${styles.addCartBtn}`}
     
     >Add to Cart</button>
     

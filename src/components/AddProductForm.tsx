@@ -36,7 +36,9 @@ const AddProductForm = () => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form 
+    className='border bg-gray-800 p-2'
+    onSubmit={handleSubmit}>
         <input value={productData.name} onChange={handleChange} name='name' placeholder='Name' required/>
         <input value={productData.price} onChange={handleChange} type='number' name='price' placeholder='Price' required/>
         <textarea value={productData.description} onChange={handleChange} name="description" required></textarea>

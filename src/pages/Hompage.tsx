@@ -10,6 +10,7 @@ return (
 
     <PageLayout>
         <h2>Homepage</h2>
+        <img src="/public/images/hero-image.jpg" alt="" />
 
     </PageLayout>
 

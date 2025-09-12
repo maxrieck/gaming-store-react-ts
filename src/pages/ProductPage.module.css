@@ -1,12 +1,12 @@
-button {
+.addCartBtn {
     background-color: rgb(32, 99, 124);
     padding: 2px 8px;
     transition: 0.2s;
     border-radius: 25px;
 }
 
-button:hover {
+.addCartBtn:hover {
   cursor: pointer;
   background-color: rgba(240, 248, 255, 0);
-  box-shadow:0 0 15px rgb(32, 99, 124);
+  box-shadow:0 0 15px rgb(58, 177, 220);
 }

@@ -7,6 +7,7 @@ import Login from './components/Login'
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import ShoppingCart from './pages/ShoppingCart';
+import ProductDetails from './pages/ProductDetails'
 
 const App: React.FC = () => {
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Route path='/admin' element={<AdminUser />} />
             <Route path='/login' element={<Login />} />
             <Route path='/shoppingcart' element={<ShoppingCart />} />
+            <Route path='/productdetail/:id' element={<ProductDetails />}  />
           </Routes>
         </BrowserRouter>
       </Provider>

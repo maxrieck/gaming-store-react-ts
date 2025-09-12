@@ -3,7 +3,6 @@ import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs, } from 'firebase/firestore';
 import PageLayout from './PageLayout';
 import type { Product } from '../types';
-import './ProductPage.module.css'
 import ProductCards from '../components/ProductCards';
 
 

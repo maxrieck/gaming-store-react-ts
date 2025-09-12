@@ -41,7 +41,7 @@ const ProductList:React.FC = () => {
             setProducts(dataArray)
         };
         fetchProducts();
-    }, [])
+    }, [products])
 
   return (
 
@@ -49,10 +49,10 @@ const ProductList:React.FC = () => {
         <h2>Product List</h2>
         {products.map((products) => (
             <div key={products.id} 
-                className='bg-blue-500 border m-4'>
-                <div>
+                className='bg-gray-800 border m-4 p-2 space-y-2 space-x-5'>
+                <div className='flex flex-row justify-between'>
                     <p>Name: {products.name}</p>
-                    <p>Price: {products.price}</p>
+                    <p>ID: {products.id}</p>
                 </div>
                 <input
                     onChange={(e) => setNewName(e.target.value)}
