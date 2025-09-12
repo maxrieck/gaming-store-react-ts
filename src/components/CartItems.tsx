@@ -45,21 +45,21 @@ const CartItems:React.FC<CartItemsProps> = ({ cartItems }) => {
                 <button 
                 className={`${styles.cartItemBtn}`}
                 onClick={() =>
-                  dispatch(decreaseQuantity(product))
+                  dispatch(decreaseQuantity({ id: product.id! }))
                 }
                 > - </button>
                 <p className='mx-1'>{product.quantity}</p>
                 <button 
                 className={`${styles.cartItemBtn}`}
                 onClick={() =>
-                  dispatch(increaseQuantity(product))
+                  dispatch(increaseQuantity({ id: product.id! }))
                 }> + </button>
             </div>
 
             <button
               className={`${styles.cartItemBtn}`}
                 onClick={() => {
-                    dispatch(removeCartItem(product))
+                    dispatch(removeCartItem({ id: product.id! }))
                     handleModal()
                 }}>X</button>
         </div>
