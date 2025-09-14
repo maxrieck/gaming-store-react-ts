@@ -26,7 +26,7 @@ const DeleteCartModal:React.FC<DeleteCartModalProps> = ({ onClose }) => {
   return (
 
     <div 
-    className={`fixed top-[70px] right-[25px] left-auto z-[9999] 
+    className={`fixed top-[70px] right-[25px] left-auto z-[9999] border
         text-center px-8 py-4 transition-opacity duration-1000 bg-gray-800
         ${isFading ? 'opacity-0' : 'opacity-100' }`}>
 

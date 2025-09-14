@@ -3,10 +3,9 @@ import type { Product } from '../types'
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../store/store';
 import { removeCartItem, increaseQuantity, decreaseQuantity } from '../store/cartSlice';
-import DeleteCartModal from './DeleteCarttModal';
 import styles from './CartItems.module.css'
 import { Link } from 'react-router-dom'
-
+import AddCartModal from './AddCartModal';
 
 
 interface CartItemsProps {
@@ -18,16 +17,13 @@ const CartItems:React.FC<CartItemsProps> = ({ cartItems }) => {
 
     const dispatch = useDispatch<AppDispatch>()
 
-    const [showModal, setShowModal] = useState<boolean>(false)
-
-    const handleModal = () => {
-      setShowModal(true)
-    }
+  const [modalProductId, setModalProductId] = useState<string | null>(null)
 
   return (
 
     <>
-    {showModal && <DeleteCartModal onClose={() =>setShowModal(false)} />}
+    {/* {showModal && <DeleteCartModal onClose={() =>setShowModal(false)} />} */}
+    
 
     {cartItems.map((product:Product, index:number) => (
         
@@ -58,10 +54,20 @@ const CartItems:React.FC<CartItemsProps> = ({ cartItems }) => {
 
             <button
               className={`${styles.cartItemBtn}`}
-                onClick={() => {
-                    dispatch(removeCartItem({ id: product.id! }))
-                    handleModal()
-                }}>X</button>
+                onClick={() => setModalProductId(product.id!)}
+            >X</button>
+
+            {modalProductId === product.id && (
+              <AddCartModal
+                onClose={() => {
+                  dispatch(removeCartItem({ id: product.id! }));
+                  setModalProductId(null);
+                }}
+                product={product}
+                modalType='delete'
+              />
+            )}
+            
         </div>
 
     ))}

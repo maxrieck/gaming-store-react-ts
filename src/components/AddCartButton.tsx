@@ -26,7 +26,11 @@ const AddCartButton:React.FC<AddCartButtonProps>= ({ product }) => {
   return (
 
     <>
-    {showModal && <AddCartModal onClose={()=>setShowModal(false)}/>}
+    {showModal && <AddCartModal 
+        onClose={()=>setShowModal(false)} 
+        product={product}
+        modalType='add'
+        />}
     <button 
         onClick={() => {
             if (product.id) {

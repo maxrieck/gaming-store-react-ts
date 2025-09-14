@@ -4,6 +4,7 @@ import { getDoc, doc } from 'firebase/firestore';
 import PageLayout from './PageLayout';
 import type { Product } from '../types';
 import { useParams } from 'react-router-dom';
+import AddCartButton from '../components/AddCartButton';
 
 
 const ProductDetails: React.FC = () => {
@@ -18,7 +19,7 @@ const ProductDetails: React.FC = () => {
             const docRef = doc(db, 'products', id);
             const docSnap = await getDoc(docRef);
             if (docSnap.exists()) {
-                setProduct(docSnap.data());
+                setProduct({ id: docSnap.id, ...docSnap.data() } as Product);
             } else {
                 // handle not found
             }
@@ -35,6 +36,7 @@ const ProductDetails: React.FC = () => {
                         <img src={product.image} alt={product.name} className='w-150' />
                         <h3>{product.price}</h3>
                         <p>{product.description}</p>
+                        <AddCartButton product={product} />
                     </>
                 ) : (
                     <p>Loading...</p>

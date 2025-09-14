@@ -1,0 +1,11 @@
+
+.navButton {    
+    border-radius: 100%;
+    padding: 5px; 
+    transition: 0.3s;   
+}
+
+.navButton:hover {
+    background-color: rgb(47, 147, 184);
+    color: black;
+}
