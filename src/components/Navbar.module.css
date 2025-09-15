@@ -1,11 +1,14 @@
 
 .navButton {    
     border-radius: 100%;
-    padding: 5px; 
-    transition: 0.3s;   
+    padding: 8px; 
+    transition: 0.4s;   
 }
 
 .navButton:hover {
-    background-color: rgb(47, 147, 184);
     color: black;
+    background: #53edea;
+    background: radial-gradient(circle, rgb(107, 239, 237) 5%,
+    rgba(42, 123, 155, 1) 89%);
+    box-shadow:0 0 16px rgb(58, 177, 220);
 }

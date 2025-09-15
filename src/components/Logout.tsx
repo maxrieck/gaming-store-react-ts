@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAuth } from '../firebase/useAuth'
+import styles from '../pages/ProductPage.module.css'
 
 
 const Logout:React.FC = () => {
@@ -18,7 +19,9 @@ const Logout:React.FC = () => {
 
   return (
 
-    <button onClick={handleLogout}>Logout</button>
+    <button
+      className={`${styles.addCartBtn}`}
+    onClick={handleLogout}>Logout</button>
 
   )
 }
