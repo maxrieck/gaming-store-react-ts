@@ -3,8 +3,11 @@ import { auth } from "../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { createUserDocument } from '../firebase/useService';
 
+interface RegistrationFormProps {
+    onClose: () => void
+}
 
-const RegistrationForm: React.FC = () => {
+const RegistrationForm: React.FC<RegistrationFormProps> = ({ onClose }) => {
 
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
@@ -26,17 +29,29 @@ const RegistrationForm: React.FC = () => {
             console.error("Error registering:", error);
             alert("Error registering: " + (error?.message || error));
         }
+        onClose()
     };
 
     return (
 
-        <form onSubmit={handleRegister}>
-            <input value={firstName} onChange={e => setFirstName(e.target.value)} placeholder='First Name' />
-            <input value={lastName} onChange={e => setLastName(e.target.value)} placeholder='Last Name' />
-            <input value={email} onChange={e => setEmail(e.target.value)} type='email' placeholder='Email' />
-            <input value={password} onChange={e => setPassword(e.target.value)} type='password' placeholder='New Password' />
-            <button type='submit' >Register</button>
-        </form>
+        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+            <div className="bg-gray-900 p-5 w-150 h-100 shadow-lg relative border flex flex-col justify-center items-center">
+                <button
+                    onClick={onClose}
+                    className="absolute top-2 right-2 px-2 text-white hover:text-gray-900 hover:bg-gray-600 hover:rounded-md"
+                >
+                    X
+                </button>
+                <form onSubmit={handleRegister}>
+                    <input value={firstName} onChange={e => setFirstName(e.target.value)} placeholder='First Name' />
+                    <input value={lastName} onChange={e => setLastName(e.target.value)} placeholder='Last Name' />
+                    <input value={email} onChange={e => setEmail(e.target.value)} type='email' placeholder='Email' />
+                    <input value={password} onChange={e => setPassword(e.target.value)} type='password' placeholder='New Password' />
+                    <button type='submit' >Register</button>
+                </form>
+
+            </div>
+        </div>
 
     )
 }

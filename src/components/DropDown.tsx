@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../firebase/useAuth'
 import LogoutModal from './LogoutModal'
+import RegistrationForm from './RegistrationForm'
 
 
 
@@ -10,13 +11,22 @@ const DropDown = () => {
 
     const { currentUser } = useAuth();
     const [logoutModal, setLogoutModal] = useState<boolean>(false)
+    const [createModal, setCreateModal] = useState<boolean>(false)
 
-    const closeModal = () => {
+    const closeLogoutModal = () => {
         setLogoutModal(false)
     }
 
-    const openModal = () => {
+    const openLogoutModal = () => {
         setLogoutModal(true)
+    }
+
+    const closeCreateModal = () => {
+        setCreateModal(false)
+    }
+
+    const openCreateModal = () => {
+        setCreateModal(true)
     }
     
 
@@ -25,7 +35,23 @@ const DropDown = () => {
     <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-gray-700 shadow-lg z-50">
       <ul className="py-1">
 
-        {!currentUser && <Link to={'/login'} >Login</Link> } 
+        {!currentUser && 
+        <>
+        <li>
+          <Link to={'/login'} 
+            className="block px-4 py-2 text-sm text-white hover:bg-gray-600"
+          >Login</Link> 
+        </li>
+        <li>
+          <button
+            onClick={openCreateModal}
+            className="block px-4 py-2 w-full text-left text-sm text-white hover:bg-gray-600"
+          >
+            Create Profile
+          </button>
+        </li>
+        </>
+        }
 
         {currentUser && <>
         <li>
@@ -47,8 +73,8 @@ const DropDown = () => {
          
         <li>
           <button
-            onClick={openModal}
-            className="block px-4 py-2 text-sm text-white hover:bg-gray-600"
+            onClick={openLogoutModal}
+            className="block px-4 py-2 w-full text-left text-sm text-white hover:bg-gray-600"
           >
             Logout
           </button>
@@ -57,7 +83,8 @@ const DropDown = () => {
       </ul>
     </div>
 
-    {logoutModal && <LogoutModal onClose={closeModal} /> }
+    {logoutModal && <LogoutModal onClose={closeLogoutModal} /> }
+    {createModal && <RegistrationForm onClose={closeCreateModal} /> }
     </>
   )
 }
