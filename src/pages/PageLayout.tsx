@@ -1,14 +1,14 @@
 import React from 'react'
 import NavBar from '../components/NavBar';
+import ProductSideBar from '../products/ProductSideBar';
 
 
 type PageLayoutProps = {
     children?:React.ReactNode;
 }
 
-
 const PageLayout:React.FC<PageLayoutProps> = ({ children }) => {
-
+  
 
   return (
 
@@ -18,7 +18,7 @@ const PageLayout:React.FC<PageLayoutProps> = ({ children }) => {
       </header>
 
       <aside className="hidden md:block p-4">
-        Sidebar
+        <ProductSideBar />
       </aside>
 
       <main className="p-4">

@@ -4,12 +4,15 @@ import { collection, getDocs, } from 'firebase/firestore';
 import PageLayout from './PageLayout';
 import type { Product } from '../types';
 import ProductCards from '../components/ProductCards';
-
+import { useSelector } from 'react-redux';
+import type { RootState } from '../store/store';
 
 
 const ProductPage:React.FC = () => {
 
     const [products, setProducts] = useState<Product[]>([])
+    const selectedCategory = useSelector((state: RootState) => state.category.selectedCategory);
+
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -24,13 +27,12 @@ const ProductPage:React.FC = () => {
         
     }, [])
 
-    console.log(products)
-
+    
     return (
 
     <PageLayout>
         <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-3' >
-            <ProductCards products={products} />
+            <ProductCards products={products} category={selectedCategory} />
         </div>
     </PageLayout>
 

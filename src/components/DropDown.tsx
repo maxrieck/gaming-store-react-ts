@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../firebase/useAuth'
 import LogoutModal from './LogoutModal'
 import RegistrationForm from './RegistrationForm'
+import Login from './Login'
 
 
 
 
-const DropDown = () => {
+
+const DropDown:React.FC = () => {
 
     const { currentUser } = useAuth();
     const [logoutModal, setLogoutModal] = useState<boolean>(false)
+    const [loginModal, setLoginModal] = useState<boolean>(false)
     const [createModal, setCreateModal] = useState<boolean>(false)
 
     const closeLogoutModal = () => {
@@ -19,6 +22,14 @@ const DropDown = () => {
 
     const openLogoutModal = () => {
         setLogoutModal(true)
+    }
+
+    const closeLoginModal = () => {
+        setLoginModal(false)
+    }
+
+    const openLoginModal = () => {
+        setLoginModal(true)
     }
 
     const closeCreateModal = () => {
@@ -38,9 +49,9 @@ const DropDown = () => {
         {!currentUser && 
         <>
         <li>
-          <Link to={'/login'} 
-            className="block px-4 py-2 text-sm text-white hover:bg-gray-600"
-          >Login</Link> 
+          <button onClick={openLoginModal}
+            className="block px-4 py-2 w-full text-left text-sm text-white hover:bg-gray-600"
+          >Login</button> 
         </li>
         <li>
           <button
@@ -67,7 +78,7 @@ const DropDown = () => {
             to="/orders"
             className="block px-4 py-2 text-sm text-white hover:bg-gray-600"
           >
-            Order History
+            My Orders
           </Link>
         </li>
          
@@ -82,7 +93,8 @@ const DropDown = () => {
         </> }
       </ul>
     </div>
-
+    
+    {loginModal && <Login onClose={closeLoginModal} /> }
     {logoutModal && <LogoutModal onClose={closeLogoutModal} /> }
     {createModal && <RegistrationForm onClose={closeCreateModal} /> }
     </>

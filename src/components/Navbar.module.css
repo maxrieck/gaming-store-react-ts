@@ -11,4 +11,5 @@
     background: radial-gradient(circle, rgb(107, 239, 237) 5%,
     rgba(42, 123, 155, 1) 89%);
     box-shadow:0 0 16px rgb(58, 177, 220);
+    cursor: pointer;
 }

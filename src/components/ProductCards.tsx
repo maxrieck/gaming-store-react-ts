@@ -4,18 +4,22 @@ import { Link } from 'react-router-dom'
 import type { Product } from '../types'
 
 interface ProductCardProps {
-  products: Product[]
+  products: Product[];
+  category: string
 }
 
 
-const ProductCards:React.FC<ProductCardProps> = ({ products }) => {
+const ProductCards:React.FC<ProductCardProps> = ({ products, category }) => {
 
   return (
     <>
-      {products.map((product) => (
+      {products
+        .filter(product => category === 'All Products' || product.category === category)
+        .map((product) => (
 
         <div
-            className='flex flex-col justify-center border-1 p-3 bg-gradient-to-tr from-gray-900 via-zinc-800 to-cyan-900'
+            className='flex flex-col justify-center border-1 p-3 
+              bg-gradient-to-tr from-gray-900 via-zinc-800 to-cyan-900'
             key={product.id}>
             <Link to={`/productdetail/${product.id}`}>
             <img src={product.image}

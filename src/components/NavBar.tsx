@@ -15,7 +15,6 @@ const NavBar:React.FC = () => {
   const [userMenu, setUserMenu] = useState<boolean>(false);
 
   const handleUserMenu = () => {
-    console.log('Toggle clicked');
     if(userMenu===false) {
       setUserMenu(true)
     } else setUserMenu(false)

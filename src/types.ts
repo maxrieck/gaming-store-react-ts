@@ -23,3 +23,16 @@ export interface User {
     email: string;
     role: string;
 }
+
+export interface Order {
+    id: string;
+    userId: string;
+    products: {
+        productId: string;
+        quantity: number;
+        price: number;
+        title?: string;
+    }[];
+    totalPrice: number;
+    createdAt: Date;
+}

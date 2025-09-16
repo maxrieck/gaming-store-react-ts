@@ -20,7 +20,7 @@ const LogoutModal:React.FC<LogoutModalProps> = ({ onClose }) => {
             </button>
             <h2 className="text-lg font-semibold mb-6">Are you sure you want to log out?</h2>
             <div className='space-x-4'>
-              <Logout />
+              <Logout onClose={onClose} />
               <button className={`${styles.addCartBtn}`} onClick={onClose}>Stay logged in</button>
             </div>
             

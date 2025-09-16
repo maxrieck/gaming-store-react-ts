@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { useAuth } from '../firebase/useAuth'
-import PageLayout from "../pages/PageLayout";
+import styles from '../pages/ProductPage.module.css'
+
+interface LoginProps {
+    onClose: () => void
+}
 
 
-const Login = () => {
+const Login:React.FC<LoginProps> = ({ onClose }) => {
 
   const { login } = useAuth();
   const [email, setEmail] = useState<string>("");
@@ -18,31 +22,46 @@ const Login = () => {
     } catch (err: any) {
       setError(err.message);
     }
+    onClose()
   };
 
   return (
-    <PageLayout>
+    <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+      <div className="bg-gray-900 p-5 w-150 h-100 shadow-lg relative border flex flex-col justify-center items-center">
+
+       <button
+          onClick={onClose}
+          className="absolute top-2 right-2 px-2 text-white hover:text-gray-900 hover:bg-gray-600 hover:rounded-md"
+          >
+          X
+       </button>
 
       <form 
-      className="border bg-gray-500 p-5"
-      onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-        {error && <p>{error}</p>}
-      </form>
+        className="flex flex-col justify-center items-center p-5"
+        onSubmit={handleSubmit}>
 
-    </PageLayout>
+        <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <br />
+
+        <button className={`${styles.addCartBtn}`} type="submit">Login</button>
+
+        {error && <p>{error}</p>}
+
+      </form>
+      </div>
+    </div>
   );
 
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { auth } from "../firebase/firebaseConfig";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { createUserDocument } from '../firebase/useService';
+import styles from '../pages/ProductPage.module.css'
 
 interface RegistrationFormProps {
     onClose: () => void
@@ -42,12 +43,29 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onClose }) => {
                 >
                     X
                 </button>
-                <form onSubmit={handleRegister}>
-                    <input value={firstName} onChange={e => setFirstName(e.target.value)} placeholder='First Name' />
-                    <input value={lastName} onChange={e => setLastName(e.target.value)} placeholder='Last Name' />
-                    <input value={email} onChange={e => setEmail(e.target.value)} type='email' placeholder='Email' />
-                    <input value={password} onChange={e => setPassword(e.target.value)} type='password' placeholder='New Password' />
-                    <button type='submit' >Register</button>
+                <form onSubmit={handleRegister} className='flex flex-col justify-center items-center'>
+
+                    <input 
+                        value={firstName} 
+                        onChange={e => setFirstName(e.target.value)} 
+                        placeholder='First Name'/>
+                    <input 
+                        value={lastName} 
+                        onChange={e => setLastName(e.target.value)} 
+                        placeholder='Last Name'/>
+                    <input 
+                        value={email} 
+                        onChange={e => setEmail(e.target.value)} 
+                        type='email' placeholder='Email'/>
+                    <input 
+                        value={password} 
+                        onChange={e => setPassword(e.target.value)} 
+                        type='password' placeholder='New Password'/>
+
+                    <br />
+                    
+                    <button className={`${styles.addCartBtn}`} type='submit' >Register</button>
+                    
                 </form>
 
             </div>

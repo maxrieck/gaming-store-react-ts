@@ -3,11 +3,11 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Hompage from './pages/Hompage'
 import ProductPage from './pages/ProductPage'
 import AdminUser from './pages/AdminUser'
-import Login from './components/Login'
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import ShoppingCart from './pages/ShoppingCart';
 import ProductDetails from './pages/ProductDetails'
+import MyOrders from './pages/MyOrders' 
+import Checkout from './components/Checkout'
 
 const App: React.FC = () => {
 
@@ -20,9 +20,9 @@ const App: React.FC = () => {
             <Route path='/' element={<Hompage />} />
             <Route path='/products' element={<ProductPage />} />
             <Route path='/admin' element={<AdminUser />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/shoppingcart' element={<ShoppingCart />} />
+            <Route path='/shoppingcart' element={<Checkout />} />
             <Route path='/productdetail/:id' element={<ProductDetails />}  />
+            <Route path='/orders' element={<MyOrders />} />
           </Routes>
         </BrowserRouter>
       </Provider>

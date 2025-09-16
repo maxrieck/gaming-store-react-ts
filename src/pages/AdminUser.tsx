@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import ProductList from '../components/ProductList'
-import RegistrationForm from '../components/RegistrationForm'
 import UserList from '../components/UserList'
 import AddProductForm from '../components/AddProductForm'
 import PageLayout from './PageLayout'
@@ -48,7 +47,6 @@ const AdminUser:React.FC = () => {
 
         {currentPage=='users' &&
             <>
-                <RegistrationForm />
                 <UserList />            
             </>
         }
