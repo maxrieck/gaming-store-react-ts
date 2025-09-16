@@ -28,7 +28,7 @@ const ProductDetails: React.FC = () => {
     }, [id]);
 
     return (
-        <PageLayout>
+        <PageLayout pageType='product'>
             <div>
                 {product ? (
                     <>

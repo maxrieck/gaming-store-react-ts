@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore'
 import type { User } from '../types'
+import PageLayout from '../pages/PageLayout';
 
 
 const UserList: React.FC = () => {
@@ -58,7 +59,7 @@ const UserList: React.FC = () => {
     };
 
     return (
-        <div>
+        <PageLayout pageType='admin'>
             <h2>User List</h2>
 
             {users.map((user) => {
@@ -108,7 +109,7 @@ const UserList: React.FC = () => {
                     </div>
                 );
             })}
-        </div>
+        </PageLayout>
     );
 };
 

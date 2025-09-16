@@ -17,7 +17,7 @@ const ProductSideBar: React.FC = () => {
         <button
           key={category}
           onClick={() => handleClick(category)}
-          className={`px-4 py-2 rounded w-35 text-white ${
+          className={`px-4 py-2 rounded w-35 text-white text-left ${
             selectedCategory === category ? 'bg-gray-800' : ''
           }`}
         >

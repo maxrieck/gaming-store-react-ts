@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore'
+import PageLayout from '../pages/PageLayout';
 
 interface Product {
     id?: string;
@@ -45,7 +46,7 @@ const ProductList:React.FC = () => {
 
   return (
 
-    <div>
+    <PageLayout pageType='admin'>
         <h2>Product List</h2>
         {products.map((products) => (
             <div key={products.id} 
@@ -85,7 +86,7 @@ const ProductList:React.FC = () => {
                 <button onClick={() => deleteProduct(products.id)}>Delete Product</button>
             </div>
         ))}
-    </div>
+    </PageLayout>
   )
 }
 

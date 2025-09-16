@@ -1,14 +1,22 @@
 import React from 'react'
 import NavBar from '../components/NavBar';
 import ProductSideBar from '../products/ProductSideBar';
+import AdminSideBar from '../components/AdminSideBar'
+import { Link } from 'react-router-dom'
 
 
 type PageLayoutProps = {
     children?:React.ReactNode;
+    pageType?: 'product' | 'admin' | 'default';
 }
 
-const PageLayout:React.FC<PageLayoutProps> = ({ children }) => {
+const PageLayout:React.FC<PageLayoutProps> = ({ children, pageType = 'default' }) => {
   
+  const links = [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' },
+  ];
 
   return (
 
@@ -18,7 +26,22 @@ const PageLayout:React.FC<PageLayoutProps> = ({ children }) => {
       </header>
 
       <aside className="hidden md:block p-4">
-        <ProductSideBar />
+        <div className="flex flex-col items-start space-y-1">
+              {links.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`px-4 py-2 rounded w-35 text-white ${
+                    location.pathname === link.path ? 'bg-gray-800' : ''
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <hr className='my-1'/>
+        {pageType === 'product' && <ProductSideBar />}
+        {pageType === 'admin' && <AdminSideBar />}  
       </aside>
 
       <main className="p-4">

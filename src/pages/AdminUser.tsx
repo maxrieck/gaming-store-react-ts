@@ -25,7 +25,7 @@ const AdminUser:React.FC = () => {
 
   return (
 
-    <PageLayout>
+    <PageLayout pageType='admin'>
         <div className='flex border m-2 p-2 gap-x-4'>
 
             <button value={currentPage} 

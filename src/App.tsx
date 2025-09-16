@@ -8,6 +8,10 @@ import { store } from './store/store';
 import ProductDetails from './pages/ProductDetails'
 import MyOrders from './pages/MyOrders' 
 import Checkout from './components/Checkout'
+import ProductList from './components/ProductList'
+import UserList from './components/UserList'
+import About from './pages/About'
+import Contact from './pages/Contact'
 
 const App: React.FC = () => {
 
@@ -23,6 +27,10 @@ const App: React.FC = () => {
             <Route path='/shoppingcart' element={<Checkout />} />
             <Route path='/productdetail/:id' element={<ProductDetails />}  />
             <Route path='/orders' element={<MyOrders />} />
+            <Route path='/productList' element={<ProductList />} />
+            <Route path='/userList' element={<UserList />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/about' element={<About />} />
           </Routes>
         </BrowserRouter>
       </Provider>
