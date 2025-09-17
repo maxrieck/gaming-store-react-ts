@@ -4,11 +4,12 @@ import UserList from '../components/UserList'
 import AddProductForm from '../components/AddProductForm'
 import PageLayout from './PageLayout'
 import { useAuth } from '../firebase/useAuth'
+import { Link } from 'react-router-dom'
 
 
 const AdminUser:React.FC = () => {
 
-    const [currentPage, setCurrentPage] = useState<string>('')
+    
 
     const { currentUser, role } = useAuth()
 
@@ -26,30 +27,16 @@ const AdminUser:React.FC = () => {
   return (
 
     <PageLayout pageType='admin'>
-        <div className='flex border m-2 p-2 gap-x-4'>
 
-            <button value={currentPage} 
-                onClick={() => setCurrentPage('products')}
-                >Products</button>
-
-            <button value={currentPage} 
-                onClick={() => setCurrentPage('users')}
-                >Users</button>
-
+        <h2>Admin User Access</h2>
+        <hr />
+        <div className='space-x-5 flex flex-col m-2'>
+            <Link to='/productList' className='hover:bg-gray-800 w-50'>Product List</Link>
+            <Link to='/addProduct' className='hover:bg-gray-800 w-50'>Add Product</Link>
+            <Link to='/userList' className='hover:bg-gray-800 w-50'>User List</Link>    
         </div>
 
-        {currentPage==='products' && 
-            <>
-                <AddProductForm />
-                <ProductList />
-            </>  
-        }
-
-        {currentPage=='users' &&
-            <>
-                <UserList />            
-            </>
-        }
+          
 
     </PageLayout>
   )

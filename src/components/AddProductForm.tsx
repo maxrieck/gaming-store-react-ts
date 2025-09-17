@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { db } from '../firebase/firebaseConfig';
 import { collection, addDoc } from 'firebase/firestore';
 import type { Product } from '../types'
+import PageLayout from '../pages/PageLayout';
 
 
 const AddProductForm = () => {
@@ -36,6 +37,8 @@ const AddProductForm = () => {
 
 
   return (
+    <PageLayout pageType='admin'>
+
     <form 
     className='border bg-gray-800 p-2'
     onSubmit={handleSubmit}>
@@ -44,6 +47,7 @@ const AddProductForm = () => {
         <textarea value={productData.description} onChange={handleChange} name="description" required></textarea>
         <button type='submit'>Add Product</button>
     </form>
+    </PageLayout>
   )
 }
 

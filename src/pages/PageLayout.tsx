@@ -31,7 +31,7 @@ const PageLayout:React.FC<PageLayoutProps> = ({ children, pageType = 'default' }
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`px-4 py-2 rounded w-35 text-white ${
+                  className={`px-4 py-1 rounded w-35 text-white ${
                     location.pathname === link.path ? 'bg-gray-800' : ''
                   }`}
                 >

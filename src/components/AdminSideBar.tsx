@@ -17,8 +17,9 @@ const AdminSideBar: React.FC = () => {
   }
 
   const links = [
-    { path: '/productlist', label: 'Products' },
-    { path: '/userlist', label: 'Users' },
+    { path: '/productlist', label: 'Product List'},
+    { path: '/userlist', label: 'User List'},
+    { path: '/addProduct', label: 'Add Product'}
   ];
 
   return (
@@ -27,7 +28,7 @@ const AdminSideBar: React.FC = () => {
         <Link
           key={link.path}
           to={link.path}
-          className={`px-4 py-2 rounded w-35 text-white ${
+          className={`px-4 py-1 rounded w-35 text-white ${
             location.pathname === link.path ? 'bg-gray-800' : ''
           }`}
         >

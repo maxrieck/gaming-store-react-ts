@@ -12,6 +12,7 @@ import ProductList from './components/ProductList'
 import UserList from './components/UserList'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import AddProductForm from './components/AddProductForm'
 
 const App: React.FC = () => {
 
@@ -31,6 +32,7 @@ const App: React.FC = () => {
             <Route path='/userList' element={<UserList />} />
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
+            <Route path='/addProduct' element={<AddProductForm />} />
           </Routes>
         </BrowserRouter>
       </Provider>
