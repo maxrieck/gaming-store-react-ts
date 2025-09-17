@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase/firebaseConfig';
 import { collection, getDocs, } from 'firebase/firestore';
-import PageLayout from './PageLayout';
+import PageLayout from '../pages/PageLayout';
 import type { Product } from '../types';
-import ProductCards from '../components/ProductCards';
+import ProductCards from '../products/ProductCards';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../store/store';
 

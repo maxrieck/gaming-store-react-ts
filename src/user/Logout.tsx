@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAuth } from '../firebase/useAuth'
-import styles from '../pages/ProductPage.module.css'
+import styles from '../products/ProductPage.module.css'
 
 interface LogoutProps {
     onClose: () => void

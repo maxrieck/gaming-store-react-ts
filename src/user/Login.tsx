@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from '../firebase/useAuth'
-import styles from '../pages/ProductPage.module.css'
+import styles from '../products/ProductPage.module.css'
 
 interface LoginProps {
     onClose: () => void

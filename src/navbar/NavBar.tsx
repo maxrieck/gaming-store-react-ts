@@ -7,7 +7,7 @@ import { FaLaptop } from 'react-icons/fa6';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { RiAdminLine } from 'react-icons/ri';
 import styles from './Navbar.module.css';
-import DropDown from './DropDown';
+import DropDown from '../user/DropDown';
 
 
 const NavBar: React.FC = () => {

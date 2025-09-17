@@ -1,7 +1,7 @@
 import React from 'react'
-import NavBar from '../components/NavBar';
+import NavBar from '../navbar/NavBar';
 import ProductSideBar from '../products/ProductSideBar';
-import AdminSideBar from '../components/AdminSideBar'
+import AdminSideBar from '../admin/AdminSideBar'
 import { Link } from 'react-router-dom'
 
 

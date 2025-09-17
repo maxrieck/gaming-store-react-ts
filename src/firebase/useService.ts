@@ -1,7 +1,8 @@
 import { db } from "./firebaseConfig";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
-export async function createUserDocument(user, extraData = {}) {
+import type { User } from 'firebase/auth';
+export async function createUserDocument(user: User, extraData = {}) {
     
     const userRef = doc(db, "self", user.uid);
     const userSnap = await getDoc(userRef);

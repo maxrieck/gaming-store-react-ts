@@ -1,8 +1,5 @@
-import React, { useState } from 'react'
-import ProductList from '../components/ProductList'
-import UserList from '../components/UserList'
-import AddProductForm from '../components/AddProductForm'
-import PageLayout from './PageLayout'
+import React from 'react'
+import PageLayout from '../pages/PageLayout'
 import { useAuth } from '../firebase/useAuth'
 import { Link } from 'react-router-dom'
 

@@ -1,18 +1,18 @@
 import { AuthProvider } from './firebase/useAuth'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Hompage from './pages/Hompage'
-import ProductPage from './pages/ProductPage'
-import AdminUser from './pages/AdminUser'
+import ProductPage from './products/ProductPage'
+import AdminUser from './admin/AdminUser'
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import ProductDetails from './pages/ProductDetails'
-import MyOrders from './pages/MyOrders' 
-import Checkout from './components/Checkout'
-import ProductList from './components/ProductList'
-import UserList from './components/UserList'
+import ProductDetails from './products/ProductDetails'
+import MyOrders from './user/MyOrders' 
+import Checkout from './cart/Checkout'
+import ProductList from './admin/ProductList'
+import UserList from './admin/UserList'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import AddProductForm from './components/AddProductForm'
+import AddProductForm from './admin/AddProductForm'
 
 const App: React.FC = () => {
 

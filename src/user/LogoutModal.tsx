@@ -1,6 +1,6 @@
 import React from 'react'
 import Logout from './Logout'
-import styles from '../pages/ProductPage.module.css'
+import styles from '../products/ProductPage.module.css'
 
 interface LogoutModalProps {
   onClose: () => void

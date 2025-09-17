@@ -4,7 +4,7 @@ import type { AppDispatch } from '../store/store'
 import { addCartItem, } from '../store/cartSlice';
 import type { Product } from '../types'
 import AddCartModal from './AddCartModal';
-import styles from '../pages/ProductPage.module.css'
+import styles from './ProductPage.module.css'
 
 
 interface AddCartButtonProps {
