@@ -1,0 +1,39 @@
+name: Gaming Store CI/CD
+
+on:
+  push: 
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+
+    steps: 
+      # Step 1 checkout the code
+      - name: Checkout code
+        uses: action/checkout@v2
+
+      # Step 2 Setup Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with: 
+          node-version: '20'
+
+      # Step 3 install  dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4 Run Tests
+      - name: Run Tests
+        run: npm Tests
+      
+      # Step 5 Build React app
+      - name: Build App
+        run: npm run build
+
