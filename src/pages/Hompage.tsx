@@ -9,8 +9,8 @@ const Hompage:React.FC = () => {
 return (
 
     <PageLayout>
-        <h2>Homepage</h2>
-        <img src="/public/images/hero-image.jpg" alt="" />
+        <h2>PowerOn Gaming</h2>
+        <img src="/images/hero-image.jpg" alt="" />
 
     </PageLayout>
 
