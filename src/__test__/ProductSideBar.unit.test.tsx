@@ -32,9 +32,9 @@ describe('ProductSideBar', () => {
   });
 
   it('highlights the selected category', () => {
-    renderWithStore('Laptops');
-    const laptopsBtn = screen.getByText('Laptops');
-    expect(laptopsBtn).toHaveClass('bg-gray-800');
+  renderWithStore('Laptops');
+  const laptopsBtn = screen.getByText('Laptops');
+  expect(laptopsBtn).toHaveClass('bg-zinc-800');
   });
 
   it('dispatches setSelectedCategory on click', () => {
