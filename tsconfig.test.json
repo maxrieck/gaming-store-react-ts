@@ -5,7 +5,11 @@
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "types": [
+      "jest",
+      "@testing-library/jest-dom"
+    ]
   },
   "include": ["src", "src/__test__"]
 }
