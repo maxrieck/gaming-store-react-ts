@@ -25,7 +25,14 @@ const MyOrders = () => {
 
   if (loading) return <p>Loading your orders...</p>;
 
-  if (!orders.length) return <p>You have not placed any orders yet.</p>;
+  if (!orders.length) {
+    return (
+      <PageLayout>
+        <h1>My Orders</h1>
+        <p>You have not placed any orders yet.</p>
+      </PageLayout>
+    );
+  }
 
   return (
     <PageLayout>

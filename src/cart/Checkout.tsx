@@ -47,7 +47,7 @@ const Checkout = () => {
 
   return (
     <PageLayout>
-      <h3 className='homeBanner w-250'>Checkout</h3>
+      <h3 className='homeBanner'>Checkout</h3>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (

@@ -66,7 +66,8 @@ const UserList: React.FC = () => {
                 const editState = editStates[user.id!];
 
                 return (
-                    <div key={user.id} style={{ border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
+                    <div key={user.id} 
+                    className='bg-zinc-800 border m-4 p-2 space-y-2 space-x-5'>
                         <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
                         <p><strong>Email:</strong> {user.email}</p>
 
@@ -89,6 +90,7 @@ const UserList: React.FC = () => {
                             onChange={(e) => handleInputChange(user.id!, 'email', e.target.value)}
                         />
 
+                        <div>
                         <button
                             onClick={() => {
                                 if (
@@ -101,11 +103,14 @@ const UserList: React.FC = () => {
                                     alert('Please fill in all fields before updating.');
                                 }
                             }}
+                            className='adminButton m-3'
                         >
                             Update Profile
                         </button>
 
-                        <button onClick={() => deleteUser(user.id!)}>Delete User</button>
+                        <button onClick={() => deleteUser(user.id!)}
+                            className='adminButton m-3'>Delete User</button>
+                        </div>
                     </div>
                 );
             })}

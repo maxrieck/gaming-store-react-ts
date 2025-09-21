@@ -5,6 +5,12 @@
   color: whitesmoke;
 }
 
+button {
+  cursor: pointer;
+}
+
+
+
 input {
   border: solid 1px;
   margin:1rem;
@@ -12,6 +18,16 @@ input {
 }
 
 input:hover {
+  background-color: rgba(240, 248, 255, 0.099);
+}
+
+textarea {
+  border: solid 1px;
+  margin:1rem;
+  padding: 0.5rem;
+}
+
+textarea:hover {
   background-color: rgba(240, 248, 255, 0.099);
 }
 
@@ -28,6 +44,16 @@ input:hover {
     rgba(42, 123, 155, 1) 89%);
   box-shadow:0 0 30px rgb(42, 123, 220);
 
+}
+
+.adminButton {
+  background-color: rgb(72, 72, 72);
+  padding: 2px 6px 2px 6px;
+  border-radius: 6px;  
+}
+
+.adminButton:hover {
+  background-color: rgb(247, 30, 30);
 }
 
 

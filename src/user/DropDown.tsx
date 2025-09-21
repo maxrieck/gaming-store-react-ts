@@ -69,23 +69,19 @@ const DropDown:React.FC = () => {
           <Link
             to="/profile"
             className="block px-4 py-2 text-sm text-white hover:bg-zinc-600"
-          >
-            User Profile
-          </Link>
+          >User Profile</Link>
         </li>
         <li>
           <Link
             to="/orders"
-            className="block px-4 py-2 text-sm text-white hover:bg-gray-600"
-          >
-            My Orders
-          </Link>
+            className="block px-4 py-2 text-sm text-white hover:bg-zinc-600"
+          >My Orders</Link>
         </li>
          
         <li>
           <button
             onClick={openLogoutModal}
-            className="block px-4 py-2 w-full text-left text-sm text-white hover:bg-gray-600"
+            className="block px-4 py-2 w-full text-left text-sm text-white hover:bg-zinc-600"
           >
             Logout
           </button>

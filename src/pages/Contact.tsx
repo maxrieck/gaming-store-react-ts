@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PageLayout from './PageLayout';
+import styles from '../products/ProductPage.module.css'
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -62,7 +63,7 @@ const Contact: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="bg-primary-400 text-zinc-900 px-6 py-2 rounded font-semibold hover:bg-primary-500 transition-colors"
+            className={`my-3 mx-5 ${styles.addCartBtn}`}
           >
             Send Message
           </button>

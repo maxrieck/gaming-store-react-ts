@@ -90,7 +90,7 @@ describe('ProductDetails', () => {
     if (setUserCallback) setUserCallback(null);
     
     expect(await findByText('Test Product')).toBeInTheDocument();
-    expect(screen.getByText('99.99')).toBeInTheDocument();
+    expect(screen.getByText('$99.99')).toBeInTheDocument();
     expect(screen.getByText('A great product')).toBeInTheDocument();
   });
 

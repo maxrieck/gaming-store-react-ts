@@ -28,9 +28,9 @@ const AdminUser:React.FC = () => {
         <h2>Admin User Access</h2>
         <hr />
         <div className='space-x-5 flex flex-col m-2'>
-            <Link to='/productList' className='hover:bg-gray-800 w-50'>Product List</Link>
-            <Link to='/addProduct' className='hover:bg-gray-800 w-50'>Add Product</Link>
-            <Link to='/userList' className='hover:bg-gray-800 w-50'>User List</Link>    
+            <Link to='/productList' className='hover:bg-zinc-800 w-50'>Product List</Link>
+            <Link to='/addProduct' className='hover:bg-zinc-800 w-50'>Add Product</Link>
+            <Link to='/userList' className='hover:bg-zinc-800 w-50'>User List</Link>    
         </div>
 
           

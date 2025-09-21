@@ -40,12 +40,21 @@ const AddProductForm = () => {
     <PageLayout pageType='admin'>
 
     <form 
-    className='border bg-gray-800 p-2'
+    className='border bg-zinc-800 p-2 px-20 flex flex-col'
     onSubmit={handleSubmit}>
-        <input value={productData.name} onChange={handleChange} name='name' placeholder='Name' required/>
-        <input value={productData.price} onChange={handleChange} type='number' name='price' placeholder='Price' required/>
-        <textarea value={productData.description} onChange={handleChange} name="description" required></textarea>
-        <button type='submit'>Add Product</button>
+
+        <label htmlFor="name">Product Name</label>
+        <input value={productData.name} onChange={handleChange} id='name' placeholder='Name' required/>
+
+        <label htmlFor="price">Price</label>
+        <input value={productData.price} onChange={handleChange} type='number' id='price' placeholder='Price' required/>
+
+        <label htmlFor="category">Category</label>
+        <input value={productData.category} onChange={handleChange} type='text' id='category' placeholder='Category' required/>
+
+        <label htmlFor="description">Description</label>
+        <textarea value={productData.description} onChange={handleChange} id="description" required></textarea>
+        <button type='submit' className='w-50 m-6 adminButton'>Add Product</button>
     </form>
     </PageLayout>
   )

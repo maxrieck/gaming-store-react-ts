@@ -50,7 +50,7 @@ const ProductList:React.FC = () => {
         <h2>Product List</h2>
         {products.map((products) => (
             <div key={products.id} 
-                className='bg-gray-800 border m-4 p-2 space-y-2 space-x-5'>
+                className='bg-zinc-800 border m-4 p-2 space-y-2 space-x-5'>
                 <div className='flex flex-row justify-between'>
                     <p>Name: {products.name}</p>
                     <p>ID: {products.id}</p>
@@ -59,31 +59,37 @@ const ProductList:React.FC = () => {
                     onChange={(e) => setNewName(e.target.value)}
                     type="string"
                     placeholder="Enter new name:"/>
-                <button onClick={() => updateProduct(products.id, { name: newName })}>
+                <button onClick={() => updateProduct(products.id, { name: newName })}
+                    className='adminButton'>
                     Update Name
                 </button>
                 <input
                     onChange={(e) => setNewDescription(e.target.value)}
                     type="string"
                     placeholder="Enter new description:"/>
-                <button onClick={() => updateProduct(products.id, { description: newDescription })}>
+                <button onClick={() => updateProduct(products.id, { description: newDescription })}
+                    className='adminButton'>
                     Update Description
                 </button>
                 <input
                     onChange={(e) => setNewPrice(Number(e.target.value))}
                     type="number"
                     placeholder="Enter new price:"/>
-                <button onClick={() => updateProduct(products.id, { price: newPrice })}>
+                <button onClick={() => updateProduct(products.id, { price: newPrice })}
+                    className='adminButton'>
                     Update Price
                 </button>
                 <input
                     onChange={(e) => setNewPicture(e.target.value)}
                     type="string"
                     placeholder="Enter image URL:"/>
-                <button onClick={() => updateProduct(products.id, { image: newPicture })}>
+                <button onClick={() => updateProduct(products.id, { image: newPicture })}
+                    className='adminButton'>
                     Update Picture
                 </button>
-                <button onClick={() => deleteProduct(products.id)}>Delete Product</button>
+                <button onClick={() => deleteProduct(products.id)}
+                    className='adminButton'>
+                        Delete Product</button>
             </div>
         ))}
     </PageLayout>

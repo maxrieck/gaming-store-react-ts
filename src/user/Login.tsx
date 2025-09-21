@@ -31,11 +31,11 @@ const Login:React.FC<LoginProps> = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-      <div className="bg-gray-900 p-5 w-150 h-100 shadow-lg relative border flex flex-col justify-center items-center">
+      <div className="bg-zinc-900 p-5 w-150 h-100 shadow-lg relative border flex flex-col justify-center items-center">
 
        <button
           onClick={onClose}
-          className="absolute top-2 right-2 px-2 text-white hover:text-gray-900 hover:bg-gray-600 hover:rounded-md"
+          className="absolute top-2 right-2 px-2 text-white hover:text-zinc-900 hover:bg-zinc-600 hover:rounded-md"
           >
           X
        </button>

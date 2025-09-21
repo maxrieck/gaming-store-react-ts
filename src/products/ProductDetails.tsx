@@ -5,6 +5,7 @@ import PageLayout from '../pages/PageLayout';
 import type { Product } from '../types';
 import { useParams } from 'react-router-dom';
 import AddCartButton from './AddCartButton';
+import styles from './ProductPage.module.css'
 
 
 const ProductDetails: React.FC = () => {
@@ -32,11 +33,18 @@ const ProductDetails: React.FC = () => {
             <div>
                 {product ? (
                     <>
-                        <h2>{product.name}</h2>
+                        <h2 className={` ${styles.productBanner}`}
+                        >{product.name}</h2>
+
+                        <div className="max-w-4xl space-y-3 mx-auto p-6 px-5 bg-zinc-800 text-zinc-100 rounded-lg shadow my-8">
+
+
                         <img src={product.image} alt={product.name} className='w-150' />
-                        <h3>{product.price}</h3>
+                        <h3>${product.price}</h3>
                         <p>{product.description}</p>
+
                         <AddCartButton product={product} />
+                        </div>
                     </>
                 ) : (
                     <p>Loading...</p>
