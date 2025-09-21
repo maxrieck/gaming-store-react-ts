@@ -1,25 +1,16 @@
 import React from 'react'
-import { useAuth } from '../firebase/useAuth'
 import { Link, useLocation } from 'react-router-dom'
 
 
-const AdminSideBar: React.FC = () => {
+const DefaultSideBar: React.FC = () => {
     
-  const { currentUser, role } = useAuth();
+  
   const location = useLocation();
 
-  if (!currentUser || role !== 'admin') {
-    return (
-      <div className="text-white p-4">
-        <h3 className="text-red-500 font-semibold">Access Denied</h3>
-      </div>
-    );
-  }
 
   const links = [
-    { path: '/productlist', label: 'Product List'},
-    { path: '/userlist', label: 'User List'},
-    { path: '/addProduct', label: 'Add Product'}
+    { path: '/products', label: 'Shop Now'},
+    { path: '/shoppingcart', label: 'Checkout'},
   ];
 
   return (
@@ -39,4 +30,4 @@ const AdminSideBar: React.FC = () => {
   );
 };
 
-export default AdminSideBar
+export default DefaultSideBar

@@ -43,20 +43,20 @@ const DropDown:React.FC = () => {
 
   return (
     <>
-    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-gray-700 shadow-lg z-50">
+    <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-48 bg-zinc-700 shadow-lg z-50">
       <ul className="py-1">
 
         {!currentUser && 
         <>
         <li>
           <button onClick={openLoginModal}
-            className="block px-4 py-2 w-full text-left text-sm text-white hover:bg-gray-600"
+            className="block px-4 py-2 w-full text-left text-sm text-white hover:bg-zinc-600"
           >Login</button> 
         </li>
         <li>
           <button
             onClick={openCreateModal}
-            className="block px-4 py-2 w-full text-left text-sm text-white hover:bg-gray-600"
+            className="block px-4 py-2 w-full text-left text-sm text-white hover:bg-zinc-600"
           >
             Create Profile
           </button>
@@ -68,7 +68,7 @@ const DropDown:React.FC = () => {
         <li>
           <Link
             to="/profile"
-            className="block px-4 py-2 text-sm text-white hover:bg-gray-600"
+            className="block px-4 py-2 text-sm text-white hover:bg-zinc-600"
           >
             User Profile
           </Link>

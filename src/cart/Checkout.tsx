@@ -6,6 +6,7 @@ import { useAuth } from '../firebase/useAuth';
 import { emptyCart } from '../store/cartSlice'; 
 import CartItems from './CartItems';
 import PageLayout from '../pages/PageLayout';
+import styles from '../products/ProductPage.module.css'
 
 const Checkout = () => {
   const { currentUser } = useAuth();
@@ -46,7 +47,7 @@ const Checkout = () => {
 
   return (
     <PageLayout>
-      <h1>Checkout</h1>
+      <h3 className='homeBanner w-250'>Checkout</h3>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
@@ -54,7 +55,9 @@ const Checkout = () => {
           
           <CartItems cartItems={cartItems} />
 
-          <button onClick={handlePlaceOrder}>
+          <button
+          className={`my-4 mx-5 px-5 w-50 ${styles.addCartBtn}`}
+          onClick={handlePlaceOrder}>
             Place Order
           </button>
         </div>

@@ -3,6 +3,8 @@ import NavBar from '../navbar/NavBar';
 import ProductSideBar from '../products/ProductSideBar';
 import AdminSideBar from '../admin/AdminSideBar'
 import { Link } from 'react-router-dom'
+import DefaultSideBar from './DefaultSidebar';
+import Footer from './Footer'
 
 
 type PageLayoutProps = {
@@ -20,8 +22,8 @@ const PageLayout:React.FC<PageLayoutProps> = ({ children, pageType = 'default' }
 
   return (
 
-    <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] grid-rows-[auto_1fr_auto] min-h-screen bg-gray-900">
-      <header className="col-span-full bg-gray-800 text-white p-4 rounded-3xl m-3">
+    <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] grid-rows-[auto_1fr_auto] min-h-screen bg-zinc-900">
+      <header className="col-span-full bg-zinc-800 text-white p-4 rounded-3xl m-3">
         <NavBar />
       </header>
 
@@ -32,7 +34,7 @@ const PageLayout:React.FC<PageLayoutProps> = ({ children, pageType = 'default' }
                   key={link.path}
                   to={link.path}
                   className={`px-4 py-1 rounded w-35 text-white ${
-                    location.pathname === link.path ? 'bg-gray-800' : ''
+                    location.pathname === link.path ? 'bg-zinc-700' : ''
                   }`}
                 >
                   {link.label}
@@ -41,7 +43,8 @@ const PageLayout:React.FC<PageLayoutProps> = ({ children, pageType = 'default' }
             </div>
             <hr className='my-1'/>
         {pageType === 'product' && <ProductSideBar />}
-        {pageType === 'admin' && <AdminSideBar />}  
+        {pageType === 'admin' && <AdminSideBar />} 
+        {pageType === 'default' && <DefaultSideBar />} 
       </aside>
 
       <main className="p-4">
@@ -49,7 +52,7 @@ const PageLayout:React.FC<PageLayoutProps> = ({ children, pageType = 'default' }
       </main>
 
       <footer className="col-span-full text-center p-4">
-        Footer
+        <Footer />
       </footer>
     </div>
 
