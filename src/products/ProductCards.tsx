@@ -20,7 +20,7 @@ const ProductCards:React.FC<ProductCardProps> = ({ products, category }) => {
 
         <div
             className='flex flex-col justify-center border-1 p-3 
-              bg-gradient-to-tr from-gray-900 via-zinc-800 to-cyan-900'
+              bg-gradient-to-tr from-zinc-900 via-zinc-800 to-cyan-900'
             key={product.id}>
             <Link to={`/productdetail/${product.id}`}>
             <img src={product.image}

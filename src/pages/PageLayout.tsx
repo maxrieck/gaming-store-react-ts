@@ -23,7 +23,7 @@ const PageLayout:React.FC<PageLayoutProps> = ({ children, pageType = 'default' }
   return (
 
     <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] grid-rows-[auto_1fr_auto] min-h-screen bg-zinc-900">
-      <header className="col-span-full bg-zinc-800 text-white p-4 rounded-3xl m-3">
+      <header className="col-span-full bg-zinc-800 text-white p-3 m-3">
         <NavBar />
       </header>
 
