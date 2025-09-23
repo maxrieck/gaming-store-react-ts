@@ -43,17 +43,17 @@ const AddProductForm = () => {
     className='border bg-zinc-800 p-2 px-20 flex flex-col'
     onSubmit={handleSubmit}>
 
-        <label htmlFor="name">Product Name</label>
-        <input value={productData.name} onChange={handleChange} id='name' placeholder='Name' required/>
+    <label htmlFor="name">Product Name</label>
+    <input name="name" value={productData.name} onChange={handleChange} id='name' placeholder='Name' required/>
 
-        <label htmlFor="price">Price</label>
-        <input value={productData.price} onChange={handleChange} type='number' id='price' placeholder='Price' required/>
+    <label htmlFor="price">Price</label>
+    <input name="price" value={productData.price} onChange={handleChange} type='number' id='price' placeholder='Price' required/>
 
-        <label htmlFor="category">Category</label>
-        <input value={productData.category} onChange={handleChange} type='text' id='category' placeholder='Category' required/>
+    <label htmlFor="category">Category</label>
+    <input name="category" value={productData.category} onChange={handleChange} type='text' id='category' placeholder='Category' required/>
 
-        <label htmlFor="description">Description</label>
-        <textarea value={productData.description} onChange={handleChange} id="description" required></textarea>
+    <label htmlFor="description">Description</label>
+    <textarea name="description" value={productData.description} onChange={handleChange} id="description" required></textarea>
         <button type='submit' className='w-50 m-6 adminButton'>Add Product</button>
     </form>
     </PageLayout>
