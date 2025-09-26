@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../store/store';  
 import { createOrder } from '../firebase/orders';
@@ -8,11 +9,18 @@ import CartItems from './CartItems';
 import PageLayout from '../pages/PageLayout';
 import styles from '../products/ProductPage.module.css'
 
-const Checkout = () => {
+const Checkout:React.FC = () => {
+
   const { currentUser } = useAuth();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cartItems.cartItems) || [];
+  const [visible, setVisible] = useState<boolean>(false)
+  
+  useEffect(() => {
+      const timer = setTimeout(() => setVisible(true), 100);
+      return () => clearTimeout(timer);
+  }, []);
 
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * (item.quantity ?? 1),
@@ -47,7 +55,7 @@ const Checkout = () => {
 
   return (
     <PageLayout>
-      <h3 className='homeBanner'>Checkout</h3>
+      <h3 className={`homeBanner${visible ? ' visible' : ''}`}>Checkout</h3>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (

@@ -9,9 +9,9 @@ const Hompage:React.FC = () => {
     const [visible, setVisible] = useState<boolean>(false)
 
      useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
+        const timer = setTimeout(() => setVisible(true), 100);
+        return () => clearTimeout(timer);
+    }, []);
 
 
 return (
