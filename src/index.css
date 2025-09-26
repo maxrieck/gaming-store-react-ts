@@ -43,7 +43,12 @@ textarea:hover {
   background: radial-gradient(circle, rgb(115, 239, 237) 5%,
     rgba(42, 123, 155, 1) 89%);
   box-shadow:0 0 30px rgb(42, 123, 220);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
 
+.homeBanner.visible {
+  opacity: 1;
 }
 
 .adminButton {
@@ -70,8 +75,6 @@ textarea:hover {
     rgba(42, 123, 155, 1) 89%);
   box-shadow:1px 0 15px rgb(42, 123, 220);
 }
-
-
 
 
 
