@@ -12,7 +12,9 @@ return (
         <h1
             className='homeBanner'
         >Welcome to PowerOn Gaming</h1>
-        <img src="/images/home-image.jpg" alt="" />
+        <img src="/images/banner2.png" alt="" />
+
+        <button className='defaultBtn mx-8 mt-3'>Show Now</button>
 
     </PageLayout>
 

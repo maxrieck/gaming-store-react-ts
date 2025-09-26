@@ -17,7 +17,8 @@
 .active {
     color: black;
     background: #53edea;
-    background: radial-gradient(circle, rgb(129, 235, 233) 5%,
-    rgb(55, 146, 182) 89%);
+    background: radial-gradient(circle, rgb(115, 239, 237) 5%,
+    rgb(42, 123, 155, 1) 89%);
     box-shadow:0 0 16px rgb(67, 178, 218);
+    border: solid 1px rgb(115, 239, 237);
 }

@@ -7,8 +7,6 @@
 
 .addCartBtn:hover {
   cursor: pointer;
-  
-  font-weight: bold;
   background: #53edea;
   background: radial-gradient( rgb(115, 239, 237) 10%,
     rgba(42, 123, 155, 1) 89%);
